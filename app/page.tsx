@@ -79,7 +79,8 @@ export default function Home() {
 
             <div>
               <div className="font-serif text-xl font-semibold tracking-wide">
-                AURORA LEGAL
+                SLA — Sulaman Law Associates
+LAW ASSOCIATES
               </div>
 
               <div className="text-[9px] uppercase tracking-[0.3em] text-black/50">
@@ -174,7 +175,7 @@ export default function Home() {
               <div className="relative aspect-[4/5]">
                 <Image
                   src="/hero.jpeg"
-                  alt="Aurora Legal law firm"
+                  alt="SLA — Sulaman Law Associates"
                   fill
                   priority
                   className="object-cover"
@@ -242,7 +243,7 @@ export default function Home() {
 
           <div className="text-[15px] leading-8 text-black/60">
             <p>
-              Aurora Legal is a full-service law firm committed to delivering
+              SLA — Sulaman Law Associates is a full-service law firm committed to delivering
               thoughtful, commercially practical and results-oriented legal
               solutions.
             </p>
@@ -317,7 +318,7 @@ export default function Home() {
   </div>
 </section>
 
-     {/* Team */}
+    {/* Team */}
 <section
   id="team"
   className="mx-auto max-w-7xl px-6 py-24 lg:py-32"
@@ -325,7 +326,7 @@ export default function Home() {
   <div className="flex flex-col justify-between gap-5 md:flex-row md:items-end">
     <div>
       <p className="text-xs font-semibold uppercase tracking-[0.3em] text-[#b18a4b]">
-        People
+        Our Team
       </p>
 
       <h2 className="mt-5 font-serif text-4xl sm:text-5xl">
@@ -337,43 +338,132 @@ export default function Home() {
       href="#contact"
       className="text-sm font-semibold text-[#8c6935]"
     >
-      View Full Team →
+      Contact Our Firm →
     </a>
   </div>
 
-  <div className="mt-14 grid gap-6 md:grid-cols-3">
-    {team.map((member) => (
-      <a
-        key={member.name}
-        href={`/team/${member.name
-          .toLowerCase()
-          .replaceAll(" ", "-")}`}
-        className="group block"
-      >
-        <div className="flex aspect-[4/5] items-end bg-gradient-to-br from-[#d7d5ce] to-[#a9aaa6] p-7 transition duration-300 group-hover:scale-[1.01]">
-          <div className="flex h-20 w-20 items-center justify-center bg-[#14202b] font-serif text-xl text-[#c9a66b]">
-            {member.initials}
+  <p className="mt-6 max-w-2xl text-sm leading-7 text-black/55">
+    Experienced advocates dedicated to protecting your rights,
+    providing strategic legal representation and delivering justice.
+  </p>
+
+  <div className="mt-14 grid gap-8 md:grid-cols-2">
+
+    {/* Sheikh Muhammad Sulaman */}
+    <a
+      href="/team/sheikh-muhammad-sulaman"
+      className="group block overflow-hidden border border-[#14202b]/10 bg-[#14202b]"
+    >
+      <div className="flex justify-center overflow-hidden bg-[#14202b]">
+        <img
+          src="/sheikh-muhammad-sulaman.jpeg"
+          alt="Sheikh Muhammad Sulaman"
+          className="h-[420px] w-full object-contain transition duration-500 group-hover:scale-[1.02]"
+        />
+      </div>
+
+      <div className="border-t border-white/10 p-8 text-white">
+        <h3 className="font-serif text-3xl">
+          Sheikh Muhammad Sulaman
+        </h3>
+
+        <p className="mt-2 text-xs font-semibold uppercase tracking-[0.18em] text-[#c9a66b]">
+          Advocate Supreme Court of Pakistan
+        </p>
+
+        <p className="mt-3 text-sm italic text-white/55">
+          Former President High Court Bar Rawalpindi Bench (2015–16)
+        </p>
+
+        <div className="mt-7">
+          <p className="text-[11px] font-semibold uppercase tracking-[0.25em] text-[#c9a66b]">
+            Areas of Expertise
+          </p>
+
+          <div className="mt-4 flex flex-wrap gap-2">
+            <span className="border border-white/15 px-3 py-2 text-xs text-white/65">
+              Supreme Court Litigation
+            </span>
+
+            <span className="border border-white/15 px-3 py-2 text-xs text-white/65">
+              Civil & Constitutional Law
+            </span>
+
+            <span className="border border-white/15 px-3 py-2 text-xs text-white/65">
+              Criminal Law
+            </span>
+
+            <span className="border border-white/15 px-3 py-2 text-xs text-white/65">
+              Service Matters
+            </span>
           </div>
         </div>
 
-        <div className="border-b border-black/10 py-6">
-          <h3 className="font-serif text-2xl">
-            {member.name}
-          </h3>
-
-          <p className="mt-1 text-xs uppercase tracking-widest text-black/45">
-            {member.role}
-          </p>
-
-          <p className="mt-4 text-sm font-semibold text-[#8c6935] opacity-0 transition group-hover:opacity-100">
-            View Profile →
-          </p>
+        <div className="mt-8 text-sm font-semibold text-[#c9a66b]">
+          View Full Profile →
         </div>
-      </a>
-    ))}
+      </div>
+    </a>
+
+
+    {/* Hifsa Sulaman Sheikh */}
+    <a
+      href="/team/hifsa-sulaman-sheikh"
+      className="group block overflow-hidden border border-[#14202b]/10 bg-[#14202b]"
+    >
+      <div className="flex justify-center overflow-hidden bg-[#14202b]">
+        <img
+          src="/hifsa-sulaman-sheikh.jpeg"
+          alt="Hifsa Sulaman Sheikh"
+          className="h-[420px] w-full object-contain transition duration-500 group-hover:scale-[1.02]"
+        />
+      </div>
+
+      <div className="border-t border-white/10 p-8 text-white">
+        <h3 className="font-serif text-3xl">
+          Hifsa Sulaman Sheikh
+        </h3>
+
+        <p className="mt-2 text-xs font-semibold uppercase tracking-[0.18em] text-[#c9a66b]">
+          Advocate High Court
+        </p>
+
+        <p className="mt-3 text-sm italic text-white/55">
+          LLM International Law | Civil & Family Law Specialist
+        </p>
+
+        <div className="mt-7">
+          <p className="text-[11px] font-semibold uppercase tracking-[0.25em] text-[#c9a66b]">
+            Areas of Expertise
+          </p>
+
+          <div className="mt-4 flex flex-wrap gap-2">
+            <span className="border border-white/15 px-3 py-2 text-xs text-white/65">
+              Family & Matrimonial Law
+            </span>
+
+            <span className="border border-white/15 px-3 py-2 text-xs text-white/65">
+              Civil Litigation
+            </span>
+
+            <span className="border border-white/15 px-3 py-2 text-xs text-white/65">
+              Property Disputes
+            </span>
+
+            <span className="border border-white/15 px-3 py-2 text-xs text-white/65">
+              Women & Children Rights
+            </span>
+          </div>
+        </div>
+
+        <div className="mt-8 text-sm font-semibold text-[#c9a66b]">
+          View Full Profile →
+        </div>
+      </div>
+    </a>
+
   </div>
 </section>
-
       {/* Judgments */}
       <section
         id="judgments"
@@ -559,7 +649,7 @@ export default function Home() {
       <footer className="bg-[#101a24] px-6 py-14 text-white">
         <div className="mx-auto grid max-w-7xl gap-10 md:grid-cols-3">
           <div>
-            <div className="font-serif text-2xl">AURORA LEGAL</div>
+            <div className="font-serif text-2xl">SLA — Sulaman Law Associates</div>
 
             <p className="mt-4 max-w-xs text-sm leading-7 text-white/45">
               Advocates & Legal Consultants providing trusted legal
@@ -593,7 +683,8 @@ export default function Home() {
         </div>
 
         <div className="mx-auto mt-12 max-w-7xl border-t border-white/10 pt-6 text-xs text-white/30">
-          © 2026 Aurora Legal. All Rights Reserved.
+          © 2026 SLA — Sulaman Law Associates
+LAW ASSOCIATES. All Rights Reserved.
         </div>
       </footer>
     </main>
