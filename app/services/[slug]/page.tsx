@@ -11,7 +11,7 @@ const serviceData: Record<
     number: "01",
     title: "Civil Law",
     description:
-      "Our civil law practice provides strategic legal representation and practical advice across a broad range of civil disputes and proceedings.",
+      "Our civil law practice provides strategic legal representation and practical legal advice across a broad range of civil disputes and proceedings.",
     areas: [
       "Civil disputes and litigation",
       "Contractual disputes",
@@ -129,12 +129,12 @@ export default async function ServicePage({
         <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-5">
           <a href="/" className="flex items-center gap-3">
             <div className="flex h-11 w-11 items-center justify-center border border-[#b89555] font-serif text-xl text-[#b89555]">
-              AL
+              SLA
             </div>
 
             <div>
               <div className="font-serif text-xl font-semibold tracking-wide">
-                AURORA LEGAL
+                SULAMAN LAW ASSOCIATES
               </div>
 
               <div className="text-[9px] uppercase tracking-[0.3em] text-black/50">
@@ -235,10 +235,10 @@ export default async function ServicePage({
       {/* Footer */}
       <footer className="bg-[#101a24] px-6 py-12 text-white">
         <div className="mx-auto flex max-w-7xl flex-col justify-between gap-5 sm:flex-row">
-          <div className="font-serif text-xl">AURORA LEGAL</div>
+          <div className="font-serif text-xl">SULAMAN LAW ASSOCIATES</div>
 
           <div className="text-sm text-white/40">
-            © 2026 Aurora Legal. All Rights Reserved.
+            © 2026 Sulaman Law Associates. All Rights Reserved.
           </div>
         </div>
       </footer>
