@@ -1,38 +1,43 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { useState } from "react";
+
+import OurClients from "../components/OurClients";
+
+
 
 const services = [
   {
     number: "01",
-    title: "Civil Law",
-    text: "Strategic legal representation in civil disputes, property matters, contracts and recovery proceedings.",
+    title: "Criminal Law",
+    text: "Legal representation and assistance in criminal cases and related proceedings.",
   },
   {
     number: "02",
-    title: "Corporate Law",
-    text: "Practical legal solutions for businesses, companies, transactions and corporate documentation.",
+    title: "Labour Law",
+    text: "Legal advice and representation concerning employment, workplace and labour disputes.",
   },
   {
     number: "03",
-    title: "Constitutional Law",
-    text: "Representation and advisory services concerning constitutional and public law matters.",
+    title: "Legal Advice",
+    text: "Practical legal guidance to help individuals and organizations understand their rights and options.",
   },
   {
     number: "04",
-    title: "Arbitration & ADR",
-    text: "Efficient dispute resolution through arbitration, mediation and alternative dispute mechanisms.",
+    title: "Taxation",
+    text: "Legal assistance and advice concerning taxation matters and related disputes.",
   },
   {
     number: "05",
-    title: "Property & Land Law",
-    text: "Legal assistance in land, property, tenancy, title and related disputes.",
+    title: "Housing & Cooperative Societies",
+    text: "Legal assistance concerning housing schemes, cooperative societies and related disputes.",
   },
   {
     number: "06",
-    title: "Legal Advisory",
-    text: "Clear, commercially focused legal advice tailored to individual and institutional clients.",
+    title: "Rental Laws",
+    text: "Legal guidance and representation concerning tenancy, rent and landlord-tenant disputes.",
   },
 ];
 
@@ -142,6 +147,14 @@ export default function Home() {
             >
               Our Team
             </a>
+            
+<a
+  href="/gallery"
+  className="transition hover:text-[#a98243]"
+>
+  Gallery
+</a>
+
 
             <a
               href="#judgments"
@@ -218,6 +231,15 @@ export default function Home() {
                 >
                   Our Team
                 </a>
+                
+<a
+  href="/gallery"
+  onClick={closeMobileMenu}
+  className="border-b border-black/10 py-4 text-sm font-medium transition hover:text-[#a98243]"
+>
+  Gallery
+</a>
+
 
                 <a
                   href="#judgments"
@@ -449,419 +471,248 @@ export default function Home() {
 
           </div>
 
-          <div className="mt-14 grid border-l border-t border-white/10 sm:grid-cols-2 lg:grid-cols-3">
+          
+<div className="services-marquee mt-14 overflow-hidden">
+  <div className="services-track flex w-max">
+    {[...services, ...services].map((service, index) => (
+      <a
+        key={`${service.number}-${index}`}
+        href={`/services/${service.title
+          .toLowerCase()
+          .replaceAll(" ", "-")
+          .replaceAll("&", "and")}`}
+        className="group mx-3 flex min-h-[250px] w-[300px] shrink-0 flex-col border border-white/10 bg-white/[0.02] p-7 transition duration-300 hover:-translate-y-1 hover:border-[#c9a66b] hover:bg-white/[0.06] sm:w-[360px] sm:p-8"
+      >
+        <div className="text-xs text-[#c9a66b]">
+          {service.number}
+        </div>
 
-            {services.map((service) => (
+        <h3 className="mt-8 font-serif text-2xl">
+          {service.title}
+        </h3>
 
-              <a
-                key={service.number}
-                href={`/services/${service.title
-                  .toLowerCase()
-                  .replaceAll(" ", "-")
-                  .replaceAll("&", "and")}`}
-                className="group border-b border-r border-white/10 p-8 transition hover:bg-white/[0.04]"
-              >
+        <p className="mt-4 flex-1 text-sm leading-7 text-white/60">
+          {service.text}
+        </p>
 
-                <div className="text-xs text-[#c9a66b]">
-                  {service.number}
-                </div>
+        <div className="mt-6 text-sm text-[#c9a66b] transition group-hover:translate-x-1">
+          Explore Service →
+        </div>
+      </a>
+    ))}
+  </div>
+</div>
 
-                <h3 className="mt-10 font-serif text-2xl">
-                  {service.title}
-                </h3>
+<style jsx>{`
+  .services-track {
+    animation: services-scroll 36s linear infinite;
+  }
 
-                <p className="mt-4 text-sm leading-7 text-white/50">
-                  {service.text}
-                </p>
+  .services-marquee:hover .services-track {
+    animation-play-state: paused;
+  }
 
-                <div className="mt-8 text-sm text-[#c9a66b] opacity-100 transition lg:opacity-0 lg:group-hover:opacity-100">
-                  Learn more →
-                </div>
+  @keyframes services-scroll {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-50%);
+    }
+  }
 
-              </a>
+  @media (prefers-reduced-motion: reduce) {
+    .services-track {
+      animation: none;
+    }
+  }
+`}</style>
 
-            ))}
-
-          </div>
         </div>
       </section>
 
 {/* =========================================================
           TEAM
       ========================================================= */}
-      <section
-        id="team"
-        className="mx-auto max-w-7xl px-6 py-20 sm:py-24 lg:py-32"
-      >
-        <div className="flex flex-col justify-between gap-5 md:flex-row md:items-end">
-          <div>
-            <p className="text-xs font-semibold uppercase tracking-[0.3em] text-[#b18a4b]">
-              Our Team
-            </p>
+     
 
-            <h2 className="mt-5 font-serif text-4xl sm:text-5xl">
-              Our Legal Team
-            </h2>
+{/* OUR TEAM — SLA STYLE */}
+<section
+  id="team"
+  className="bg-[#101a24] px-5 py-20 text-white sm:px-6 lg:py-28"
+>
+  <div className="mx-auto max-w-7xl">
+    <div className="mb-12 max-w-3xl">
+      <p className="text-xs font-semibold uppercase tracking-[0.3em] text-[#c9a66b]">
+        The People Behind Our Practice
+      </p>
+
+      <h2 className="mt-5 font-serif text-4xl leading-tight sm:text-5xl lg:text-6xl">
+        Our Legal Team
+      </h2>
+
+      <p className="mt-5 max-w-2xl text-sm leading-7 text-white/60 sm:text-base">
+        Meet our legal professionals, committed to providing legal advice,
+        representation and professional services across a range of legal matters.
+      </p>
+
+      <div className="mt-7 h-px w-16 bg-[#c9a66b]" />
+    </div>
+
+    <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      {[
+        {
+          name: "Sheikh Muhammad Sulaman",
+          role: "Advocate Supreme Court",
+          qualification: "LLB",
+          image: "/Sheikh%20Muhammad%20Sulaman.jpg",
+          slug: "sheikh-muhammad-sulaman",
+          expertise: [
+            "Civil Law",
+            "Criminal Law",
+            "Property Law",
+            "Family Court Matters",
+          ],
+        },
+        {
+          name: "Hifsa Sulaman Sheikh",
+          role: "Advocate High Court",
+          qualification: "LLB\ MA IN IR",
+          image: "/hifsa-sulaman-sheikh.jpg",
+          slug: "hifsa-sulaman-sheikh",
+          expertise: [
+            "Family & Matrimonial Law",
+            "Civil Litigation",
+            "Property Disputes",
+            "Women & Children Rights",
+          ],
+        },
+         {
+          name: "Sheikh Muhammad Haseeb Sulaman",
+          role: "Advocate",
+          qualification: "LLB",
+          image: "/sheikh-muhammad-haseeb-sulaman.jpg",
+          slug: "sheikh-muhammad-haseeb-sulaman",
+          expertise: [
+            "Civil Law",
+            "Criminal Law",
+            "Property Law",
+            "Family Court Matters",
+          ],
+        },
+         {
+          name: "Sheikh Muhammad Waleed Sulaman",
+          role: "Advocate",
+          qualification: "LLB",
+          image: "/sheikh-muhammad-waleed-sulaman.jpg",
+          slug: "sheikh-muhammad-waleed-sulaman",
+          expertise: [
+            "Civil Law",
+            "Criminal Law",
+            "Property Law",
+            "Tax Law",
+          ],
+        },
+         {
+          name: "Ali Artaza",
+          role: "Advocate",
+          qualification: "LLB\ Textation Expert",
+          image: "/Ali%20Artaza.jpg",
+          slug: "ali-artaza",
+          expertise: [
+            "Tax Filing & Audit",
+            "Tax Litigation & Compliance",
+            "Corporate Restructuring",
+            "Company Laws Litigation",
+            "Competition Commission of Pakistan Litigation",
+            "Intellectual Property Licensing & Litigation",
+            "Arbitration & Mediation",
+          ],
+        },
+
+        {
+          name: "Burooj Huma Hashmat",
+          role: "Advocate",
+          qualification: "LLB",
+          image: "/burooj-huma-hashmat.jpg",
+          slug: "burooj-huma-hashmat",
+          expertise: ["Criminal Law"],
+        },
+              
+        {
+          name: "Sehrish Javed",
+          role: "Advocate High Court",
+          qualification: "LLB",
+          image: "/sehrish-javed.jpg",
+          slug: "sehrish-javed",
+          expertise: [
+            "Criminal Law",
+          ],
+        },
+       
+      ].map((member) => (
+        <article
+          key={member.slug}
+          className="group flex h-full flex-col overflow-hidden border border-white/10 bg-[#172431] transition duration-300 hover:-translate-y-1 hover:border-[#c9a66b]/70"
+        >
+          <div className="relative h-[320px] overflow-hidden bg-[#f5f0e5] sm:h-[350px]">
+            <img
+              src={member.image}
+              alt={member.name}
+              className="h-full w-full object-cover object-top transition duration-500 group-hover:scale-[1.03]"
+              onError={(event) => {
+                console.error(
+                  `Team image failed to load: ${member.image}`
+                );
+                event.currentTarget.style.visibility = "hidden";
+              }}
+            />
+            <div className="absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-[#101a24]/70 to-transparent" />
           </div>
 
-          <a
-            href="#contact"
-            className="text-sm font-semibold text-[#8c6935]"
-          >
-            Contact Our Firm →
-          </a>
-        </div>
-
-        <p className="mt-6 max-w-2xl text-sm leading-7 text-black/55">
-          Experienced advocates dedicated to protecting your rights,
-          providing strategic legal representation and delivering justice.
-        </p>
-
-        <div className="mt-14 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-
-          {/* 1. Sheikh Muhammad Sulaman */}
-          <a
-            href="/team/sheikh-muhammad-sulaman"
-            className="group block overflow-hidden border border-[#14202b]/10 bg-[#14202b]"
-          >
-            <div className="flex justify-center overflow-hidden bg-[#14202b]">
-              <img
-                src="/sheikh-muhammad-sulaman.jpeg"
-                alt="Sheikh Muhammad Sulaman"
-                className="h-[420px] w-full object-contain transition duration-500 group-hover:scale-[1.02]"
-              />
-            </div>
-
-            <div className="border-t border-white/10 p-8 text-white">
-              <h3 className="font-serif text-3xl">
-                Sheikh Muhammad Sulaman
-              </h3>
-
-              <p className="mt-2 text-xs font-semibold uppercase tracking-[0.18em] text-[#c9a66b]">
-                Advocate Supreme Court of Pakistan
-              </p>
-
-              <p className="mt-3 text-sm italic text-white/55">
-                Former President High Court Bar Rawalpindi Bench (2015–16)
-              </p>
-
-              <div className="mt-7">
-                <p className="text-[11px] font-semibold uppercase tracking-[0.25em] text-[#c9a66b]">
-                  Areas of Expertise
-                </p>
-
-                <div className="mt-4 flex flex-wrap gap-2">
-                  <span className="border border-white/15 px-3 py-2 text-xs text-white/65">
-                    Supreme Court Litigation
-                  </span>
-
-                  <span className="border border-white/15 px-3 py-2 text-xs text-white/65">
-                    Civil & Constitutional Law
-                  </span>
-
-                  <span className="border border-white/15 px-3 py-2 text-xs text-white/65">
-                    Criminal Law
-                  </span>
-
-                  <span className="border border-white/15 px-3 py-2 text-xs text-white/65">
-                    Service Matters
-                  </span>
-                </div>
-              </div>
-
-              <div className="mt-8 text-sm font-semibold text-[#c9a66b]">
-                View Full Profile →
-              </div>
-            </div>
-          </a>
-
-
-          {/* 2. Hifsa Sulaman Sheikh */}
-          <a
-            href="/team/hifsa-sulaman-sheikh"
-            className="group block overflow-hidden border border-[#14202b]/10 bg-[#14202b]"
-          >
-            <div className="flex justify-center overflow-hidden bg-[#14202b]">
-              <img
-                src="/hifsa-sulaman-sheikh.jpeg"
-                alt="Hifsa Sulaman Sheikh"
-                className="h-[420px] w-full object-contain transition duration-500 group-hover:scale-[1.02]"
-              />
-            </div>
-
-            <div className="border-t border-white/10 p-8 text-white">
-              <h3 className="font-serif text-3xl">
-                Hifsa Sulaman Sheikh
-              </h3>
-
-              <p className="mt-2 text-xs font-semibold uppercase tracking-[0.18em] text-[#c9a66b]">
-                Advocate High Court
-              </p>
-
-              <p className="mt-3 text-sm italic text-white/55">
-                LLM International Law | Civil & Family Law Specialist
-              </p>
-
-              <div className="mt-7">
-                <p className="text-[11px] font-semibold uppercase tracking-[0.25em] text-[#c9a66b]">
-                  Areas of Expertise
-                </p>
-
-                <div className="mt-4 flex flex-wrap gap-2">
-                  <span className="border border-white/15 px-3 py-2 text-xs text-white/65">
-                    Family & Matrimonial Law
-                  </span>
-
-                  <span className="border border-white/15 px-3 py-2 text-xs text-white/65">
-                    Civil Litigation
-                  </span>
-
-                  <span className="border border-white/15 px-3 py-2 text-xs text-white/65">
-                    Property Disputes
-                  </span>
-
-                  <span className="border border-white/15 px-3 py-2 text-xs text-white/65">
-                    Women & Children Rights
-                  </span>
-                </div>
-              </div>
-
-              <div className="mt-8 text-sm font-semibold text-[#c9a66b]">
-                View Full Profile →
-              </div>
-            </div>
-          </a>
-
-
-          {/* 3. Sehrish Javed */}
-          <a
-            href="/team/sehrish-javed"
-            className="group block overflow-hidden border border-[#14202b]/10 bg-[#14202b]"
-          >
-            <div className="flex justify-center overflow-hidden bg-[#14202b]">
-              <img
-                src="/Sehrish Javed.jpeg"
-                alt="Sehrish Javed"
-                className="h-[420px] w-full object-contain transition duration-500 group-hover:scale-[1.02]"
-              />
-            </div>
-
-            <div className="border-t border-white/10 p-8 text-white">
-              <h3 className="font-serif text-3xl">
-                Sehrish Javed
-              </h3>
-
-              <p className="mt-2 text-xs font-semibold uppercase tracking-[0.18em] text-[#c9a66b]">
-                Advocate High Court
-              </p>
-
-              <p className="mt-3 text-sm italic text-white/55">
-                LLM International Law | Civil & Family Law Specialist
-              </p>
-
-              <div className="mt-7">
-                <p className="text-[11px] font-semibold uppercase tracking-[0.25em] text-[#c9a66b]">
-                  Areas of Expertise
-                </p>
-
-                <div className="mt-4 flex flex-wrap gap-2">
-                  <span className="border border-white/15 px-3 py-2 text-xs text-white/65">
-                    Family & Matrimonial Law
-                  </span>
-
-                  <span className="border border-white/15 px-3 py-2 text-xs text-white/65">
-                    Civil Litigation
-                  </span>
-
-                  <span className="border border-white/15 px-3 py-2 text-xs text-white/65">
-                    Property Disputes
-                  </span>
-
-                  <span className="border border-white/15 px-3 py-2 text-xs text-white/65">
-                    Women & Children Rights
-                  </span>
-                </div>
-              </div>
-
-              <div className="mt-8 text-sm font-semibold text-[#c9a66b]">
-                View Full Profile →
-              </div>
-            </div>
-          </a>
-
-
-          {/* 4. Burooj Huma Hashmat */}
-          <a
-            href="/team/burooj-huma-hashmat"
-            className="group block overflow-hidden border border-[#14202b]/10 bg-[#14202b]"
-          >
-            <div className="flex justify-center overflow-hidden bg-[#14202b]">
-              <img
-                src="/Burooj Huma Hashmat.jpeg"
-                alt="Burooj Huma Hashmat"
-                className="h-[420px] w-full object-contain transition duration-500 group-hover:scale-[1.02]"
-              />
-            </div>
-
-            <div className="border-t border-white/10 p-8 text-white">
-              <h3 className="font-serif text-3xl">
-                Burooj Huma Hashmat
-              </h3>
-
-              <p className="mt-2 text-xs font-semibold uppercase tracking-[0.18em] text-[#c9a66b]">
-                Advocate High Court
-              </p>
-
-              <p className="mt-3 text-sm italic text-white/55">
-                LLM International Law | Civil & Family Law Specialist
-              </p>
-
-              <div className="mt-7">
-                <p className="text-[11px] font-semibold uppercase tracking-[0.25em] text-[#c9a66b]">
-                  Areas of Expertise
-                </p>
-
-                <div className="mt-4 flex flex-wrap gap-2">
-                  <span className="border border-white/15 px-3 py-2 text-xs text-white/65">
-                    Family & Matrimonial Law
-                  </span>
-
-                  <span className="border border-white/15 px-3 py-2 text-xs text-white/65">
-                    Civil Litigation
-                  </span>
-
-                  <span className="border border-white/15 px-3 py-2 text-xs text-white/65">
-                    Property Disputes
-                  </span>
-
-                  <span className="border border-white/15 px-3 py-2 text-xs text-white/65">
-                    Women & Children Rights
-                  </span>
-                </div>
-              </div>
-
-              <div className="mt-8 text-sm font-semibold text-[#c9a66b]">
-                View Full Profile →
-              </div>
-            </div>
-          </a>
-
-
-          {/* 5. Sheikh Muhammad Waleed Sulaman */}
-          <a
-            href="/team/sheikh-muhammad-waleed-sulaman"
-            className="group block overflow-hidden border border-[#14202b]/10 bg-[#14202b]"
-          >
-            <div className="flex justify-center overflow-hidden bg-[#14202b]">
-              <img
-                src="/Sheikh Muhammad Waleed Sulaman.jpeg"
-                alt="Sheikh Muhammad Waleed Sulaman"
-                className="h-[420px] w-full object-contain transition duration-500 group-hover:scale-[1.02]"
-              />
-            </div>
-
-            <div className="border-t border-white/10 p-8 text-white">
-              <h3 className="font-serif text-3xl">
-                Sheikh Muhammad Waleed Sulaman
-              </h3>
-
-              <p className="mt-2 text-xs font-semibold uppercase tracking-[0.18em] text-[#c9a66b]">
-                Advocate High Court
-              </p>
-
-              <p className="mt-3 text-sm italic text-white/55">
-                LLM International Law | Civil & Family Law Specialist
-              </p>
-
-              <div className="mt-7">
-                <p className="text-[11px] font-semibold uppercase tracking-[0.25em] text-[#c9a66b]">
-                  Areas of Expertise
-                </p>
-
-                <div className="mt-4 flex flex-wrap gap-2">
-                  <span className="border border-white/15 px-3 py-2 text-xs text-white/65">
-                    Family & Matrimonial Law
-                  </span>
-
-                  <span className="border border-white/15 px-3 py-2 text-xs text-white/65">
-                    Civil Litigation
-                  </span>
-
-                  <span className="border border-white/15 px-3 py-2 text-xs text-white/65">
-                    Property Disputes
-                  </span>
-
-                  <span className="border border-white/15 px-3 py-2 text-xs text-white/65">
-                    Women & Children Rights
-                  </span>
-                </div>
-              </div>
-
-              <div className="mt-8 text-sm font-semibold text-[#c9a66b]">
-                View Full Profile →
-              </div>
-            </div>
-          </a>
-
-
-          {/* 6. Sheikh Muhammad Haseeb Sulaman */}
-          <a
-            href="/team/sheikh-muhammad-haseeb-sulaman"
-            className="group block overflow-hidden border border-[#14202b]/10 bg-[#14202b]"
-          >
-            <div className="flex justify-center overflow-hidden bg-[#14202b]">
-              <img
-                src="/Sheikh Muhammad Haseeb Sulaman.jpeg"
-                alt="Sheikh Muhammad Haseeb Sulaman"
-                className="h-[420px] w-full object-contain transition duration-500 group-hover:scale-[1.02]"
-              />
-            </div>
-
-            <div className="border-t border-white/10 p-8 text-white">
-              <h3 className="font-serif text-3xl">
-                Sheikh Muhammad Haseeb Sulaman
-              </h3>
-
-              <p className="mt-2 text-xs font-semibold uppercase tracking-[0.18em] text-[#c9a66b]">
-                Advocate High Court
-              </p>
-
-              <p className="mt-3 text-sm italic text-white/55">
-                LLM International Law | Civil & Family Law Specialist
-              </p>
-
-              <div className="mt-7">
-                <p className="text-[11px] font-semibold uppercase tracking-[0.25em] text-[#c9a66b]">
-                  Areas of Expertise
-                </p>
-
-                <div className="mt-4 flex flex-wrap gap-2">
-                  <span className="border border-white/15 px-3 py-2 text-xs text-white/65">
-                    Family & Matrimonial Law
-                  </span>
-
-                  <span className="border border-white/15 px-3 py-2 text-xs text-white/65">
-                    Civil Litigation
-                  </span>
-
-                  <span className="border border-white/15 px-3 py-2 text-xs text-white/65">
-                    Property Disputes
-                  </span>
-
-                  <span className="border border-white/15 px-3 py-2 text-xs text-white/65">
-                    Women & Children Rights
-                  </span>
-                </div>
-              </div>
-
-              <div className="mt-8 text-sm font-semibold text-[#c9a66b]">
-                View Full Profile →
-              </div>
-            </div>
-          </a>
-
-        </div>
-      </section>
+          <div className="flex flex-1 flex-col p-6 sm:p-7">
+            <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-[#c9a66b]">
+              {member.role}
+            </p>
+
+            <h3 className="mt-3 font-serif text-2xl leading-snug text-white">
+              {member.name}
+            </h3>
+
+            <p className="mt-2 text-xs text-white/50">
+              {member.qualification}
+            </p>
+
+            <div className="my-5 h-px w-12 bg-[#c9a66b]" />
+
+            <p className="text-xs font-semibold uppercase tracking-[0.16em] text-white/60">
+              Areas of Practice
+            </p>
+
+            <ul className="mt-4 flex-1 space-y-2.5">
+              {member.expertise.map((item) => (
+                <li
+                  key={item}
+                  className="flex items-start gap-2.5 text-sm leading-6 text-white/75"
+                >
+                  <span className="mt-0.5 text-[#c9a66b]">›</span>
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+
+            <Link
+              href={`/team/${member.slug}`}
+              className="mt-7 inline-flex w-fit items-center gap-3 border-b border-[#c9a66b] pb-2 text-sm font-semibold text-white transition hover:text-[#c9a66b]"
+            >
+              View Profile <span aria-hidden="true">→</span>
+            </Link>
+          </div>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>
 
       {/* =========================================================
           JUDGMENTS
@@ -942,6 +793,8 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      <OurClients />
 
       {/* =========================================================
           CONTACT
@@ -1081,14 +934,15 @@ export default function Home() {
                     Rawalpindi, Pakistan
                   </p>
 
-                  <a
-                    href="https://www.google.com/maps/search/?api=1&query=Kashmir+Gate+Plaza+Opp+BBH+Hospital+Murree+Road+Rawalpindi"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="mt-4 inline-flex items-center gap-2 border border-[#14202b] px-5 py-3 text-xs font-semibold uppercase tracking-wider text-[#14202b] transition hover:bg-[#14202b] hover:text-white"
-                  >
-                    📍 Open in Google Maps
-                  </a>
+<a
+  href="https://www.google.com/maps/place/Globe+Bridge+Travel+and+tours/@33.6274948,73.0699539,17z/"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="mt-4 inline-flex items-center gap-2 border border-[#14202b] px-5 py-3 text-xs font-semibold uppercase tracking-wider text-[#14202b] transition hover:bg-[#14202b] hover:text-white"
+>
+  📍 Open in Google Maps
+</a>
+
 
                 </div>
 
@@ -1110,84 +964,112 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Contact Form */}
-            <div className="bg-[#14202b] p-8 text-white sm:p-10">
+           
+{/* Contact Form */}
+<div className="bg-[#14202b] p-8 text-white sm:p-10">
+  <p className="text-xs font-semibold uppercase tracking-[0.3em] text-[#c9a66b]">
+    Send an Inquiry
+  </p>
 
-              <p className="text-xs font-semibold uppercase tracking-[0.3em] text-[#c9a66b]">
-                Send an Inquiry
-              </p>
+  <h3 className="mt-4 font-serif text-3xl">
+    Tell us how we can help.
+  </h3>
 
-              <h3 className="mt-4 font-serif text-3xl">
-                Tell us how we can help.
-              </h3>
+  <form
+    action="https://formspree.io/f/xaeqvegw"
+    method="POST"
+    className="mt-8 space-y-5"
+  >
+    <div>
+      <label
+        htmlFor="inquiry-name"
+        className="mb-2 block text-xs uppercase tracking-widest text-white/50"
+      >
+        Full Name
+      </label>
+      <input
+        id="inquiry-name"
+        type="text"
+        name="name"
+        placeholder="Your name"
+        autoComplete="name"
+        required
+        className="w-full border border-white/15 bg-white/[0.04] px-4 py-4 text-sm text-white outline-none transition placeholder:text-white/30 focus:border-[#c9a66b]"
+      />
+    </div>
 
-              <form className="mt-8 space-y-5">
+    <div>
+      <label
+        htmlFor="inquiry-email"
+        className="mb-2 block text-xs uppercase tracking-widest text-white/50"
+      >
+        Email Address
+      </label>
+      <input
+        id="inquiry-email"
+        type="email"
+        name="email"
+        placeholder="you@example.com"
+        autoComplete="email"
+        required
+        className="w-full border border-white/15 bg-white/[0.04] px-4 py-4 text-sm text-white outline-none transition placeholder:text-white/30 focus:border-[#c9a66b]"
+      />
+    </div>
 
-                <div>
+    <div>
+      <label
+        htmlFor="inquiry-phone"
+        className="mb-2 block text-xs uppercase tracking-widest text-white/50"
+      >
+        Phone Number
+      </label>
+      <input
+        id="inquiry-phone"
+        type="tel"
+        name="phone"
+        placeholder="+92"
+        autoComplete="tel"
+        required
+        className="w-full border border-white/15 bg-white/[0.04] px-4 py-4 text-sm text-white outline-none transition placeholder:text-white/30 focus:border-[#c9a66b]"
+      />
+    </div>
 
-                  <label className="mb-2 block text-xs uppercase tracking-widest text-white/50">
-                    Full Name
-                  </label>
+    <div>
+      <label
+        htmlFor="inquiry-message"
+        className="mb-2 block text-xs uppercase tracking-widest text-white/50"
+      >
+        Your Message
+      </label>
+      <textarea
+        id="inquiry-message"
+        name="message"
+        rows={5}
+        placeholder="Briefly describe your legal matter..."
+        required
+        className="w-full resize-none border border-white/15 bg-white/[0.04] px-4 py-4 text-sm text-white outline-none transition placeholder:text-white/30 focus:border-[#c9a66b]"
+      />
+    </div>
 
-                  <input
-                    type="text"
-                    placeholder="Your name"
-                    className="w-full border border-white/15 bg-white/[0.04] px-4 py-4 text-sm text-white outline-none transition placeholder:text-white/30 focus:border-[#c9a66b]"
-                  />
+    <input
+      type="hidden"
+      name="_subject"
+      value="New Legal Inquiry - Sulaman Law Associates"
+    />
 
-                </div>
+    <button
+      type="submit"
+      className="w-full bg-[#c9a66b] px-6 py-4 text-sm font-semibold text-[#14202b] transition hover:bg-white"
+    >
+      Send Inquiry →
+    </button>
 
-                <div>
+    <p className="text-xs leading-5 text-white/50">
+      Your information will be submitted securely for the law firm's review.
+    </p>
+  </form>
+</div>
 
-                  <label className="mb-2 block text-xs uppercase tracking-widest text-white/50">
-                    Email Address
-                  </label>
-
-                  <input
-                    type="email"
-                    placeholder="you@example.com"
-                    className="w-full border border-white/15 bg-white/[0.04] px-4 py-4 text-sm text-white outline-none transition placeholder:text-white/30 focus:border-[#c9a66b]"
-                  />
-
-                </div>
-
-                <div>
-
-                  <label className="mb-2 block text-xs uppercase tracking-widest text-white/50">
-                    Phone Number
-                  </label>
-
-                  <input
-                    type="tel"
-                    placeholder="+92"
-                    className="w-full border border-white/15 bg-white/[0.04] px-4 py-4 text-sm text-white outline-none transition placeholder:text-white/30 focus:border-[#c9a66b]"
-                  />
-
-                </div>
-
-                <div>
-
-                  <label className="mb-2 block text-xs uppercase tracking-widest text-white/50">
-                    Your Message
-                  </label>
-
-                  <textarea
-                    rows={5}
-                    placeholder="Briefly describe your legal matter..."
-                    className="w-full resize-none border border-white/15 bg-white/[0.04] px-4 py-4 text-sm text-white outline-none transition placeholder:text-white/30 focus:border-[#c9a66b]"
-                  />
-
-                </div>
-
-                <button
-                  type="submit"
-                  className="w-full bg-[#c9a66b] px-6 py-4 text-sm font-semibold text-[#14202b] transition hover:bg-white"
-                >
-                  Send Inquiry →
-                </button>
-
-              </form>
-            </div>
 
           </div>
         </div>
@@ -1275,6 +1157,37 @@ export default function Home() {
         <div className="mx-auto mt-12 max-w-7xl border-t border-white/10 pt-6 text-xs text-white/30">
           © 2026 SULAMAN LAW ASSOCIATES. All Rights Reserved.
         </div>
+
+        
+<div className="mx-auto mt-5 max-w-7xl border-t border-white/10 pt-5 text-xs leading-6 text-white/50">
+  <p>
+    Website Designed &amp; Developed by{" "}
+    <span className="font-semibold text-[#c9a66b]">
+      Engr. Fahad Naseer
+    </span>
+  </p>
+
+  <p>Web Developer | Next.js &amp; React</p>
+
+  <div className="mt-2 flex flex-wrap gap-x-5 gap-y-2">
+    <a
+      href="mailto:fahadnaseer625@gmail.com"
+      className="transition hover:text-[#c9a66b]"
+    >
+      Email Developer
+    </a>
+
+    <a
+      href="https://wa.me/923454896539"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="transition hover:text-[#c9a66b]"
+    >
+      WhatsApp Developer
+    </a>
+  </div>
+</div>
+
 
       </footer>
 

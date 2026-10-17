@@ -1,3 +1,4 @@
+
 import Link from "next/link";
 
 const teamData: Record<
@@ -14,26 +15,23 @@ const teamData: Record<
 > = {
   "sheikh-muhammad-sulaman": {
     name: "Sheikh Muhammad Sulaman",
-    role: "Advocate Supreme Court of Pakistan",
-    bio: "Sheikh Muhammad Sulaman is a senior legal practitioner with extensive experience in litigation and legal representation. He has served as Former President of the High Court Bar Rawalpindi Bench during 2015–16.",
+    role: "Advocate",
+    bio: "Sheikh Muhammad Sulaman provides legal services in civil, criminal, property and family court matters.",
     expertise: [
-      "Supreme Court Litigation",
-      "Civil & Constitutional Law",
+      "Civil Law",
       "Criminal Law",
-      "Service Matters",
+      "Property Law",
+      "Family Court Matters",
     ],
-    education: "Advocate Supreme Court of Pakistan",
-    achievements: [
-      "Advocate Supreme Court of Pakistan",
-      "Former President High Court Bar Rawalpindi Bench (2015–16)",
-    ],
+    education: "LLB",
+    achievements: ["Legal Practice and Client Representation"],
     image: "/sheikh-muhammad-sulaman.jpeg",
   },
 
   "hifsa-sulaman-sheikh": {
     name: "Hifsa Sulaman Sheikh",
     role: "Advocate High Court",
-    bio: "Hifsa Sulaman Sheikh is an Advocate High Court with an LLM in International Law, focusing on civil, family and international legal matters.",
+    bio: "Hifsa Sulaman Sheikh provides legal representation and advisory services in her areas of practice.",
     expertise: [
       "Family & Matrimonial Law",
       "Civil Litigation",
@@ -41,31 +39,27 @@ const teamData: Record<
       "Women & Children Rights",
       "International Law",
     ],
-    education: "LLM International Law",
-    achievements: [
-      "Advocate High Court",
-      "LLM in International Law",
-      "Represented Pakistani clients in international legal matters",
-    ],
+    education: "Please confirm qualification",
+    achievements: ["Advocate High Court", "Legal Representation and Advisory"],
     image: "/hifsa-sulaman-sheikh.jpeg",
   },
 
   "sehrish-javed": {
     name: "Sehrish Javed",
     role: "Advocate High Court",
-    bio: "Sehrish Javed is an Advocate High Court with an LLM in International Law, focusing on civil, family and international legal matters.",
+    bio: "Sehrish Javed provides legal representation in criminal law and other legal matters.",
     expertise: [
       "Family & Matrimonial Law",
       "Civil Litigation",
       "Property Disputes",
       "Women & Children Rights",
       "International Law",
+      "Criminal Law",
     ],
-    education: "LLM International Law",
+    education: "LLB",
     achievements: [
       "Advocate High Court",
-      "LLM in International Law",
-      "Legal representation and advisory",
+      "Legal Representation and Advisory",
     ],
     image: "/Sehrish Javed.jpeg",
   },
@@ -73,61 +67,62 @@ const teamData: Record<
   "burooj-huma-hashmat": {
     name: "Burooj Huma Hashmat",
     role: "Advocate High Court",
-    bio: "Burooj Huma Hashmat is an Advocate High Court with an LLM in International Law, focusing on civil, family and international legal matters.",
-    expertise: [
-      "Family & Matrimonial Law",
-      "Civil Litigation",
-      "Property Disputes",
-      "Women & Children Rights",
-      "International Law",
-    ],
-    education: "LLM International Law",
-    achievements: [
-      "Advocate High Court",
-      "LLM in International Law",
-      "Legal representation and advisory",
-    ],
+    bio: "Burooj Huma Hashmat provides legal services with a focus on criminal law.",
+    expertise: ["Criminal Law"],
+    education: "LLB",
+    achievements: ["Advocate High Court", "Criminal Law Practice"],
     image: "/Burooj Huma Hashmat.jpeg",
   },
 
   "sheikh-muhammad-waleed-sulaman": {
     name: "Sheikh Muhammad Waleed Sulaman",
-    role: "Advocate High Court",
-    bio: "Sheikh Muhammad Waleed Sulaman is an Advocate High Court with an LLM in International Law, focusing on civil, family and international legal matters.",
+    role: "Advocate",
+    bio: "Sheikh Muhammad Waleed Sulaman provides legal services in civil, criminal, property and taxation matters.",
     expertise: [
-      "Family & Matrimonial Law",
-      "Civil Litigation",
-      "Property Disputes",
-      "Women & Children Rights",
-      "International Law",
+      "Civil Law",
+      "Criminal Law",
+      "Property Law",
+      "Tax Law",
     ],
-    education: "LLM International Law",
-    achievements: [
-      "Advocate High Court",
-      "LLM in International Law",
-      "Legal representation and advisory",
-    ],
+    education: "LLB",
+    achievements: ["Legal Practice and Client Representation"],
     image: "/Sheikh Muhammad Waleed Sulaman.jpeg",
   },
 
   "sheikh-muhammad-haseeb-sulaman": {
     name: "Sheikh Muhammad Haseeb Sulaman",
     role: "Advocate High Court",
-    bio: "Sheikh Muhammad Haseeb Sulaman is an Advocate High Court with an LLM in International Law, focusing on civil, family and international legal matters.",
+    bio: "Sheikh Muhammad Haseeb Sulaman provides legal services in civil, criminal, property and family court matters.",
     expertise: [
-      "Family & Matrimonial Law",
-      "Civil Litigation",
-      "Property Disputes",
-      "Women & Children Rights",
-      "International Law",
+      "Civil Law",
+      "Criminal Law",
+      "Property Law",
+      "Family Court Matters",
     ],
-    education: "LLM International Law",
-    achievements: [
-      "Advocate High Court",
-      "LLM in International Law",
-      "Legal representation and advisory",
-    ],
+    education: "LLB",
+    achievements: ["Advocate High Court", "Legal Practice and Representation"],
     image: "/Sheikh Muhammad Haseeb Sulaman.jpeg",
+  },
+
+  "ali-artaza": {
+    name: "Ali Artaza",
+    role: "Advocate",
+    bio: "Ali Artaza focuses on taxation, corporate legal matters, intellectual property and dispute resolution.",
+    expertise: [
+      "Tax Filing & Audit",
+      "Tax Litigation and Compliance",
+      "Corporate Restructuring",
+      "Company Laws Litigation",
+      "Competition Commission of Pakistan Litigation",
+      "Intellectual Property Laws: Licensing and Litigation",
+      "Arbitration and Mediation",
+    ],
+    education: "Please confirm qualification",
+    achievements: [
+      "Tax and Corporate Legal Services",
+      "Litigation and Dispute Resolution",
+    ],
+   image: "/Ali%20Artaza.jpg",
   },
 };
 
@@ -141,15 +136,14 @@ export default async function TeamMemberPage({
 
   if (!member) {
     return (
-      <main className="flex min-h-screen items-center justify-center bg-[#f7f6f2] px-6">
+      <main className="flex min-h-screen items-center justify-center bg-white px-6">
         <div className="text-center">
           <h1 className="font-serif text-4xl text-[#14202b]">
             Profile Not Found
           </h1>
-
           <Link
             href="/#team"
-            className="mt-6 inline-block text-sm font-semibold text-[#8c6935]"
+            className="mt-6 inline-block text-sm font-semibold text-[#b18a4b]"
           >
             ← Back to Team
           </Link>
@@ -159,238 +153,165 @@ export default async function TeamMemberPage({
   }
 
   return (
-    <main className="min-h-screen bg-[#f7f6f2] text-[#14202b]">
-
-      {/* =========================================================
-          HEADER
-      ========================================================= */}
-      <header className="border-b border-white/10 bg-[#14202b] text-white">
-        <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-6">
-
-          <Link
-            href="/"
-            className="font-serif text-xl tracking-[0.15em]"
-          >
-            SULAMAN LAW ASSOCIATES
+    <main className="min-h-screen bg-white text-[#14202b]">
+      <header className="sticky top-0 z-50 border-b border-[#14202b]/10 bg-white/95 backdrop-blur">
+        <div className="mx-auto flex max-w-7xl items-center justify-between px-5 py-5 sm:px-6">
+          <Link href="/" className="flex items-center gap-3">
+            <div className="flex h-10 w-10 items-center justify-center text-3xl text-[#e5a31a]">
+              ⚖
+            </div>
+            <div>
+              <div className="font-sans text-base font-bold tracking-tight text-[#14202b] sm:text-xl">
+                SULAMAN LAW ASSOCIATES
+              </div>
+              <div className="hidden text-[9px] uppercase tracking-[0.28em] text-[#14202b]/50 sm:block">
+                Advocates & Legal Consultants
+              </div>
+            </div>
           </Link>
 
           <Link
             href="/#team"
-            className="text-sm text-white/70 transition hover:text-[#c9a66b]"
+            className="text-sm font-semibold text-[#14202b]/65 transition hover:text-[#b18a4b]"
           >
             ← Our Team
           </Link>
-
         </div>
       </header>
 
-
-      {/* =========================================================
-          PROFILE HERO
-      ========================================================= */}
-      <section className="mx-auto max-w-7xl px-6 py-20 lg:py-28">
-
-        <div className="grid gap-14 lg:grid-cols-[0.8fr_1.2fr] lg:items-center">
-
-          {/* PROFILE IMAGE */}
-          <div className="overflow-hidden bg-[#14202b]">
-
+      <section className="mx-auto max-w-6xl px-5 pb-12 pt-10 sm:px-6 sm:pb-16 sm:pt-14 lg:pt-20">
+        <div className="grid gap-10 lg:grid-cols-[0.85fr_1.15fr] lg:items-center">
+          <div className="overflow-hidden bg-[#f5f0e5]">
             <img
               src={member.image}
               alt={member.name}
-              className="h-[520px] w-full object-contain"
+              className="h-[430px] w-full object-contain sm:h-[520px]"
             />
-
           </div>
 
-
-          {/* PROFILE INFORMATION */}
           <div>
-
-            <p className="text-xs font-semibold uppercase tracking-[0.3em] text-[#b18a4b]">
+            <p className="text-xs font-bold uppercase tracking-[0.25em] text-[#e5a31a]">
               Legal Professional
             </p>
 
-            <h1 className="mt-5 font-serif text-5xl leading-tight sm:text-6xl">
+            <h1 className="mt-4 font-sans text-4xl font-bold leading-tight text-[#14202b] sm:text-5xl lg:text-6xl">
               {member.name}
             </h1>
 
-            <p className="mt-4 text-sm font-semibold uppercase tracking-[0.2em] text-black/45">
+            <p className="mt-4 text-sm font-semibold uppercase tracking-[0.16em] text-[#14202b]/55">
               {member.role}
             </p>
 
-            <div className="mt-10 h-px w-20 bg-[#c9a66b]" />
+            <div className="mt-7 h-[3px] w-16 bg-[#e5a31a]" />
 
-            <p className="mt-8 max-w-2xl text-base leading-8 text-black/60">
-              {member.bio}
-            </p>
-
-          </div>
-
-        </div>
-
-      </section>
-
-
-      {/* =========================================================
-          EXPERTISE
-      ========================================================= */}
-      <section className="bg-[#14202b] px-6 py-20 text-white lg:py-24">
-
-        <div className="mx-auto max-w-7xl">
-
-          <div className="grid gap-14 lg:grid-cols-2">
-
-            <div>
-
-              <p className="text-xs font-semibold uppercase tracking-[0.3em] text-[#c9a66b]">
-                Areas of Expertise
+            <div className="mt-8 border-l-4 border-[#e5a31a] bg-[#f5f0e5] px-6 py-6 sm:px-8 sm:py-8">
+              <p className="text-base italic leading-8 text-[#334155] sm:text-lg">
+                {member.bio}
               </p>
-
-              <h2 className="mt-5 font-serif text-4xl sm:text-5xl">
-                Areas of Practice
-              </h2>
-
             </div>
-
-
-            <div>
-
-              <div className="grid gap-0 border-l border-t border-white/10 sm:grid-cols-2">
-
-                {member.expertise.map((item, index) => (
-                  <div
-                    key={item}
-                    className="border-b border-r border-white/10 p-7"
-                  >
-
-                    <p className="text-xs text-[#c9a66b]">
-                      0{index + 1}
-                    </p>
-
-                    <p className="mt-6 font-serif text-xl">
-                      {item}
-                    </p>
-
-                  </div>
-                ))}
-
-              </div>
-
-            </div>
-
           </div>
-
         </div>
-
       </section>
 
-
-      {/* =========================================================
-          EDUCATION & ACHIEVEMENTS
-      ========================================================= */}
-      <section className="mx-auto max-w-7xl px-6 py-20 lg:py-28">
-
-        <div className="grid gap-12 md:grid-cols-2">
-
-          {/* EDUCATION */}
-          <div>
-
-            <p className="text-xs font-semibold uppercase tracking-[0.3em] text-[#b18a4b]">
-              Education
-            </p>
-
-            <h2 className="mt-5 font-serif text-3xl">
-              Academic Background
-            </h2>
-
-            <p className="mt-6 text-sm leading-7 text-black/55">
-              {member.education}
-            </p>
-
+      <section className="mx-auto max-w-6xl px-5 py-10 sm:px-6 sm:py-14">
+        <div className="flex items-center gap-4">
+          <div className="flex h-12 w-12 shrink-0 items-center justify-center text-3xl text-[#e5a31a]">
+            ♙
           </div>
-
-
-          {/* ACHIEVEMENTS */}
-          <div>
-
-            <p className="text-xs font-semibold uppercase tracking-[0.3em] text-[#b18a4b]">
-              Key Achievements
-            </p>
-
-            <h2 className="mt-5 font-serif text-3xl">
-              Professional Highlights
-            </h2>
-
-            <div className="mt-6 space-y-4">
-
-              {member.achievements.map((achievement) => (
-                <div
-                  key={achievement}
-                  className="border-l-2 border-[#c9a66b] pl-5 text-sm leading-7 text-black/60"
-                >
-                  {achievement}
-                </div>
-              ))}
-
-            </div>
-
-          </div>
-
+          <h2 className="font-sans text-3xl font-bold text-[#14202b] sm:text-4xl">
+            Areas of Expertise
+          </h2>
         </div>
 
+        <div className="mt-7 space-y-5 sm:ml-2">
+          {member.expertise.map((item) => (
+            <div
+              key={item}
+              className="flex items-start gap-4 text-base text-[#334155] sm:text-lg"
+            >
+              <span className="mt-0.5 shrink-0 text-2xl leading-none text-[#e5a31a]">
+                →
+              </span>
+              <span>{item}</span>
+            </div>
+          ))}
+        </div>
       </section>
 
+      <section className="mx-auto max-w-6xl px-5 py-10 sm:px-6 sm:py-14">
+        <div className="flex items-center gap-4">
+          <div className="flex h-12 w-12 shrink-0 items-center justify-center text-3xl text-[#e5a31a]">
+            ♧
+          </div>
+          <h2 className="font-sans text-3xl font-bold text-[#14202b] sm:text-4xl">
+            Key Achievements
+          </h2>
+        </div>
 
-      {/* =========================================================
-          CONTACT CTA
-      ========================================================= */}
-      <section className="mx-auto max-w-7xl px-6 pb-20 lg:pb-28">
+        <div className="mt-7 space-y-5 sm:ml-2">
+          {member.achievements.map((achievement) => (
+            <div
+              key={achievement}
+              className="flex items-start gap-4 text-base text-[#334155] sm:text-lg"
+            >
+              <span className="mt-0.5 shrink-0 text-2xl leading-none text-[#e5a31a]">
+                →
+              </span>
+              <span>{achievement}</span>
+            </div>
+          ))}
+        </div>
+      </section>
 
-        <div className="bg-[#14202b] p-10 text-white md:p-14">
+      <section className="mx-auto max-w-6xl px-5 py-10 sm:px-6 sm:py-14">
+        <div className="border-t border-[#14202b]/10 pt-10">
+          <p className="text-xs font-bold uppercase tracking-[0.25em] text-[#e5a31a]">
+            Professional Background
+          </p>
+          <h2 className="mt-3 font-sans text-3xl font-bold text-[#14202b]">
+            Education & Qualification
+          </h2>
+          <p className="mt-5 max-w-3xl text-base leading-8 text-[#334155]">
+            {member.education}
+          </p>
+        </div>
+      </section>
 
-          <p className="text-xs uppercase tracking-[0.25em] text-[#c9a66b]">
+      <section className="mx-auto max-w-6xl px-5 pb-16 pt-8 sm:px-6 sm:pb-20">
+        <div className="bg-[#14202b] px-7 py-10 text-white sm:px-10 sm:py-12">
+          <p className="text-xs font-bold uppercase tracking-[0.25em] text-[#e5a31a]">
             Need Legal Advice?
           </p>
-
-          <h2 className="mt-5 font-serif text-3xl sm:text-4xl">
+          <h2 className="mt-4 font-serif text-3xl sm:text-4xl">
             Speak with our legal team.
           </h2>
-
           <Link
             href="/#contact"
-            className="mt-8 inline-block border border-[#c9a66b] px-7 py-4 text-sm font-semibold text-[#c9a66b] transition hover:bg-[#c9a66b] hover:text-[#14202b]"
+            className="mt-7 inline-block border border-[#e5a31a] px-7 py-4 text-sm font-semibold text-[#e5a31a] transition hover:bg-[#e5a31a] hover:text-[#14202b]"
           >
             Contact Us →
           </Link>
-
         </div>
-
       </section>
 
+      <a
+        href="https://wa.me/923215175624"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Contact Sulaman Law Associates on WhatsApp"
+        className="fixed bottom-6 right-5 z-50 flex h-16 w-16 items-center justify-center rounded-full bg-[#25D366] text-3xl text-white shadow-xl transition hover:scale-105 sm:bottom-8 sm:right-8"
+      >
+        ☎
+      </a>
 
-      {/* =========================================================
-          FOOTER
-      ========================================================= */}
-      <footer className="bg-[#101a23] px-6 py-10 text-white">
-
-        <div className="mx-auto flex max-w-7xl flex-col justify-between gap-4 text-sm text-white/50 md:flex-row">
-
-          <p>
-            © 2026 SULAMAN LAW ASSOCIATES. All rights reserved.
-          </p>
-
-          <Link
-            href="/"
-            className="transition hover:text-[#c9a66b]"
-          >
+      <footer className="bg-[#101a23] px-5 py-8 text-white sm:px-6">
+        <div className="mx-auto flex max-w-6xl flex-col justify-between gap-4 text-sm text-white/50 sm:flex-row">
+          <p>© 2026 SULAMAN LAW ASSOCIATES. All rights reserved.</p>
+          <Link href="/" className="transition hover:text-[#e5a31a]">
             Back to Home
           </Link>
-
         </div>
-
       </footer>
-
     </main>
   );
 }
