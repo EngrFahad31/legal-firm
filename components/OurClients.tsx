@@ -1,208 +1,166 @@
-
 "use client";
 
 import Image from "next/image";
 
-const clients = [
+const sectors = [
   {
-    name: "Jammu & Kashmir Cooperative Housing Society, Islamabad",
-    shortName: "JKCHS",
-    monogram: "JK",
+    title: "Housing Societies",
+    clients: [
+      {
+        name: "Jammu & Kashmir Cooperative Housing Society",
+        logo: "/clients/jkchs.jpg",
+      },
+      {
+        name: "Ministry of Interior Employees Cooperative Housing Society",
+        logo: "/clients/miechs.jpg",
+      },
+      {
+        name: "Supreme Court Employees Housing Society",
+        logo: "/clients/scehs.jpg",
+      },
+    ],
   },
   {
-    name: "Ministry of Interior Employees Cooperative Housing Society, Islamabad",
-    shortName: "MIECHS",
-    monogram: "MI",
+    title: "Government & Public Sector",
+    clients: [
+      {
+        name: "National Highway Authority",
+        logo: "/clients/nha.jpg",
+      },
+      {
+        name: "Federal Board of Intermediate and Secondary Education",
+        logo: "/clients/fbise.jpg",
+      },
+      {
+        name: "Oil and Gas Development Company Limited",
+        logo: "/clients/ogdcl.jpg",
+      },
+      {
+        name: "Punjab Local Government Contractor",
+        logo: "/clients/punjab-local-government.jpg",
+      },
+    ],
   },
   {
-    name: "Supreme Court Employees Housing Society",
-    shortName: "SCEHS",
-    monogram: "SC",
+    title: "Corporate & Commercial",
+    clients: [
+      {
+        name: "M/S Midway Petroleum",
+        logo: "/clients/midway-petroleum.jpg",
+      },
+      {
+        name: "Fair Deal Exchange Company",
+        logo: "/clients/fair-deal-exchange.jpg",
+      },
+      {
+        name: "Associated Hotels of Pakistan",
+        logo: "/clients/associated-hotels.jpg",
+      },
+      {
+        name: "Flashman Hotel",
+        logo: "/clients/flashman-hotel.jpg",
+      },
+    ],
   },
   {
-    name: "M/S Midway Petroleum, Islamabad",
-    shortName: "Midway Petroleum",
-    monogram: "MP",
-  },
-  {
-    name: "Fair Deal Exchange Company, Islamabad",
-    shortName: "Fair Deal Exchange",
-    monogram: "FD",
-  },
-  {
-    name: "National Highway Authority (NHA), Islamabad",
-    shortName: "NHA",
-    monogram: "NHA",
-    logo: "https://www.google.com/s2/favicons?domain=nha.gov.pk&sz=128",
-  },
-  {
-    name: "Federal Board of Intermediate and Secondary Education, Islamabad",
-    shortName: "FBISE",
-    monogram: "FBISE",
-    website: "https://www.fbise.edu.pk/",
-    logo: "https://www.google.com/s2/favicons?domain=fbise.edu.pk&sz=128",
-  },
-  {
-    name: "Associated Hotels of Pakistan",
-    shortName: "Associated Hotels",
-    monogram: "AHP",
-  },
-  {
-    name: "Flashman Hotel",
-    shortName: "Flashman Hotel",
-    monogram: "FH",
-  },
-  {
-    name: "Oil and Gas Development Company Limited (OGDCL)",
-    shortName: "OGDCL",
-    monogram: "OGDCL",
-    logo: "https://www.google.com/s2/favicons?domain=ogdcl.com&sz=128",
-  },
-  {
-    name: "M/S Shaheen CNG",
-    shortName: "Shaheen CNG",
-    monogram: "SC",
-  },
-  {
-    name: "M/S Zahid Rehman CNG",
-    shortName: "Zahid Rehman CNG",
-    monogram: "ZR",
-  },
-  {
-    name: "M/S Imran Medicos",
-    shortName: "Imran Medicos",
-    monogram: "IM",
-  },
-  {
-    name: "M/S Lala G CNG",
-    shortName: "Lala G CNG",
-    monogram: "LG",
-  },
-  {
-    name: "M/S Al Haq CNG",
-    shortName: "Al Haq CNG",
-    monogram: "AH",
-  },
-  {
-    name: "M/S Hussain & Sons CNG",
-    shortName: "Hussain & Sons",
-    monogram: "HS",
-  },
-  {
-    name: "M/S Fuel Power",
-    shortName: "Fuel Power",
-    monogram: "FP",
-  },
-  {
-    name: "Punjab Local Government Contractor",
-    shortName: "Punjab Local Government",
-    monogram: "PLG",
+    title: "Other Business Clients",
+    clients: [
+      {
+        name: "M/S Shaheen CNG",
+        logo: "/clients/shaheen-cng.jpg",
+      },
+      {
+        name: "M/S Zahid Rehman CNG",
+        logo: "/clients/zahid-rehman-cng.jpg",
+      },
+      {
+        name: "M/S Imran Medicos",
+        logo: "/clients/imran-medicos.jpg",
+      },
+      {
+        name: "M/S Lala G CNG",
+        logo: "/clients/lala-g-cng.jpg",
+      },
+      {
+        name: "M/S Al Haq CNG",
+        logo: "/clients/al-haq-cng.jpg",
+      },
+      {
+        name: "M/S Hussain & Sons CNG",
+        logo: "/clients/hussain-sons-cng.jpg",
+      },
+      {
+        name: "M/S Fuel Power",
+        logo: "/clients/fuel-power.jpg",
+      },
+    ],
   },
 ];
 
 export default function OurClients() {
-  const repeatedClients = [
-    ...clients,
-    ...clients,
-    ...clients,
-    ...clients,
-  ];
-
   return (
     <section
       id="clients"
-      className="overflow-hidden bg-[#f8f5ef] py-16 sm:py-20"
+      className="overflow-hidden bg-[#0e192b] py-16 text-white sm:py-20"
     >
-      <div className="mx-auto mb-10 max-w-7xl px-5 text-center sm:px-6">
-        <p className="text-xs font-semibold uppercase tracking-[0.3em] text-[#a78348]">
-          Trusted Relationships
-        </p>
+      <div className="mx-auto max-w-7xl px-5 sm:px-8">
+        {/* Section Heading */}
+        <div className="mb-12 text-center">
+          <p className="mb-3 text-sm font-semibold uppercase tracking-[0.3em] text-[#d4b36b]">
+            Our Trusted Relationships
+          </p>
 
-        <h2 className="mt-3 font-serif text-3xl text-[#101a24] sm:text-4xl">
-          Our Clients
-        </h2>
+          <h2 className="text-3xl font-bold text-[#d4b36b] sm:text-4xl">
+            Our Clients
+          </h2>
 
-        <div className="mx-auto mt-5 h-px w-16 bg-[#c9a66b]" />
+          <div className="mx-auto mt-5 h-1 w-20 rounded-full bg-[#d4b36b]" />
 
-        <p className="mx-auto mt-4 max-w-2xl text-sm leading-6 text-[#5c6268]">
-          Organizations, businesses and institutions associated
-          with Sulaman Law Associates.
-        </p>
-      </div>
+          <p className="mx-auto mt-5 max-w-2xl text-sm leading-7 text-gray-300 sm:text-base">
+            Serving clients across housing societies, government institutions,
+            corporate organizations, and commercial businesses.
+          </p>
+        </div>
 
-      <div className="clients-marquee group flex overflow-hidden">
-        <div className="clients-track flex w-max items-stretch gap-5 px-3">
-          {repeatedClients.map((client, index) => {
-            const card = (
-              <div className="flex h-40 w-64 shrink-0 flex-col items-center justify-center border border-[#e5dfd4] bg-white px-5 text-center shadow-sm transition duration-300 hover:-translate-y-1 hover:border-[#c9a66b] hover:shadow-md sm:w-72">
-                <div className="mb-3 flex h-14 w-14 items-center justify-center rounded-full border border-[#c9a66b]/50 bg-[#f8f5ef] p-2">
-                  {client.logo ? (
+        {/* Client Categories */}
+        <div className="space-y-12">
+          {sectors.map((sector) => (
+            <div key={sector.title}>
+              <h3 className="mb-5 border-l-4 border-[#d4b36b] pl-4 text-lg font-semibold sm:text-xl">
+                {sector.title}
+              </h3>
+
+              <div className="flex flex-wrap items-center justify-center gap-5">
+                {sector.clients.map((client) => (
+                  <div
+                    key={client.name}
+                    title={client.name}
+                    className="group flex h-32 w-[190px] items-center justify-center rounded-xl border border-white/10 bg-white p-5 transition duration-300 hover:-translate-y-1 hover:border-[#d4b36b] hover:shadow-lg hover:shadow-black/20 sm:w-[210px]"
+                  >
                     <Image
                       src={client.logo}
-                      alt={`${client.shortName} website icon`}
-                      width={48}
-                      height={48}
+                      alt={client.name}
+                      width={180}
+                      height={90}
                       unoptimized
-                      className="h-10 w-10 object-contain"
+                      className="h-full w-full object-contain transition duration-300 group-hover:scale-105"
                     />
-                  ) : (
-                    <span className="font-serif text-sm font-bold tracking-wide text-[#a78348]">
-                      {client.monogram}
-                    </span>
-                  )}
-                </div>
-
-                <span className="text-sm font-semibold leading-5 text-[#101a24]">
-                  {client.name}
-                </span>
+                  </div>
+                ))}
               </div>
-            );
+            </div>
+          ))}
+        </div>
 
-            return client.website ? (
-              <a
-                key={`${client.shortName}-${index}`}
-                href={client.website}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label={`Visit ${client.name} website`}
-                className="block"
-              >
-                {card}
-              </a>
-            ) : (
-              <div key={`${client.shortName}-${index}`}>
-                {card}
-              </div>
-            );
-          })}
+        {/* Footer */}
+        <div className="mt-14 text-center">
+          <div className="mx-auto h-px max-w-3xl bg-gradient-to-r from-transparent via-[#d4b36b]/60 to-transparent" />
+
+          <p className="mt-6 text-sm text-gray-400">
+            Sulaman Law Associates — Professional Legal Services
+          </p>
         </div>
       </div>
-
-      <style jsx>{`
-        .clients-track {
-          animation: clients-scroll 100s linear infinite;
-        }
-
-        .clients-marquee:hover .clients-track {
-          animation-play-state: paused;
-        }
-
-        @keyframes clients-scroll {
-          from {
-            transform: translateX(0);
-          }
-
-          to {
-            transform: translateX(-25%);
-          }
-        }
-
-        @media (prefers-reduced-motion: reduce) {
-          .clients-track {
-            animation: none;
-          }
-        }
-      `}</style>
     </section>
   );
 }

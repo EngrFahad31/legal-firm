@@ -1,3 +1,4 @@
+import Link from "next/link";
 
 const serviceData: Record<
   string,
@@ -97,6 +98,66 @@ const serviceData: Record<
       "Representation in rental disputes",
     ],
   },
+
+  "constitutional-law": {
+    number: "07",
+    title: "Constitutional Law",
+    description:
+      "Legal advice and representation concerning constitutional matters, fundamental rights and constitutional remedies.",
+    areas: [
+      "Constitutional petitions",
+      "Fundamental rights",
+      "Constitutional interpretation",
+      "Public authority matters",
+      "Constitutional legal remedies",
+      "Representation in constitutional proceedings",
+    ],
+  },
+
+  "civil-law": {
+    number: "08",
+    title: "Civil Law",
+    description:
+      "Legal assistance and representation in civil disputes, claims and proceedings.",
+    areas: [
+      "Civil litigation",
+      "Recovery suits and claims",
+      "Declaration and injunction suits",
+      "Contractual disputes",
+      "Property-related civil disputes",
+      "Representation before civil courts",
+    ],
+  },
+
+  "family-law": {
+    number: "09",
+    title: "Family Law",
+    description:
+      "Legal guidance and representation in family and matrimonial matters.",
+    areas: [
+      "Marriage and divorce matters",
+      "Khula and dissolution of marriage",
+      "Child custody and guardianship",
+      "Maintenance claims",
+      "Dower and matrimonial disputes",
+      "Representation before family courts",
+    ],
+  },
+
+  "land-revenue-and-acquisition-laws": {
+    number: "10",
+    title: "Land Revenue and Acquisition Laws",
+    description:
+      "Legal assistance concerning land revenue, land records, acquisition matters and related disputes.",
+    areas: [
+      "Land revenue matters",
+      "Land record and ownership disputes",
+      "Land acquisition proceedings",
+      "Compensation-related matters",
+      "Revenue authority proceedings",
+      "Representation in land and acquisition disputes",
+    ],
+  },
 };
 
 export default async function ServicePage({
@@ -114,12 +175,12 @@ export default async function ServicePage({
           <h1 className="font-serif text-4xl sm:text-5xl">
             Service Not Found
           </h1>
-          <a
+          <Link
             href="/#services"
             className="mt-8 inline-block border-b border-[#b18a4b] pb-2 text-sm font-semibold"
           >
             ← Back to Services
-          </a>
+          </Link>
         </div>
       </main>
     );
@@ -129,7 +190,7 @@ export default async function ServicePage({
     <main className="min-h-screen bg-[#f7f6f2] text-[#14202b]">
       <header className="border-b border-black/10 bg-[#f7f6f2]">
         <nav className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-6 py-5">
-          <a href="/" className="flex items-center gap-3">
+          <Link href="/" className="flex items-center gap-3">
             <div className="flex h-11 w-11 shrink-0 items-center justify-center border border-[#b89555] font-serif text-xl text-[#b89555]">
               SLA
             </div>
@@ -141,13 +202,14 @@ export default async function ServicePage({
                 Advocates & Legal Consultants
               </div>
             </div>
-          </a>
-          <a
+          </Link>
+
+          <Link
             href="/#services"
             className="shrink-0 text-sm font-semibold transition hover:text-[#a98243]"
           >
             ← Back to Services
-          </a>
+          </Link>
         </nav>
       </header>
 
@@ -157,9 +219,11 @@ export default async function ServicePage({
             <span className="h-px w-10 bg-[#c9a66b]" />
             Practice Area {service.number}
           </div>
+
           <h1 className="mt-8 max-w-4xl font-serif text-5xl leading-tight sm:text-6xl lg:text-7xl">
             {service.title}
           </h1>
+
           <p className="mt-8 max-w-2xl text-base leading-8 text-white/60">
             {service.description}
           </p>
@@ -172,6 +236,7 @@ export default async function ServicePage({
             <p className="text-xs font-semibold uppercase tracking-[0.3em] text-[#b18a4b]">
               Our Expertise
             </p>
+
             <h2 className="mt-5 font-serif text-4xl leading-tight sm:text-5xl">
               Comprehensive
               <br />
@@ -185,6 +250,7 @@ export default async function ServicePage({
               the relevant matter. Please contact the firm to discuss your
               specific circumstances.
             </p>
+
             <div className="mt-10 grid border-l border-t border-black/10 sm:grid-cols-2">
               {service.areas.map((area, index) => (
                 <div
@@ -194,6 +260,7 @@ export default async function ServicePage({
                   <div className="text-xs text-[#b18a4b]">
                     {String(index + 1).padStart(2, "0")}
                   </div>
+
                   <h3 className="mt-6 font-serif text-xl">{area}</h3>
                 </div>
               ))}
@@ -208,22 +275,25 @@ export default async function ServicePage({
             <p className="text-xs font-semibold uppercase tracking-[0.3em] text-[#14202b]/60">
               Need Legal Assistance?
             </p>
+
             <h2 className="mt-4 font-serif text-3xl text-[#14202b] sm:text-5xl">
               Discuss your matter with our team.
             </h2>
           </div>
-          <a
+
+          <Link
             href="/#contact"
             className="inline-flex shrink-0 bg-[#14202b] px-8 py-4 text-sm font-semibold text-white transition hover:bg-[#253747]"
           >
             Contact Our Firm
-          </a>
+          </Link>
         </div>
       </section>
 
       <footer className="bg-[#101a24] px-6 py-12 text-white">
         <div className="mx-auto flex max-w-7xl flex-col justify-between gap-5 sm:flex-row">
           <div className="font-serif text-xl">SULAMAN LAW ASSOCIATES</div>
+
           <div className="text-sm text-white/40">
             © 2026 Sulaman Law Associates. All Rights Reserved.
           </div>

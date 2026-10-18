@@ -39,6 +39,27 @@ const services = [
     title: "Rental Laws",
     text: "Legal guidance and representation concerning tenancy, rent and landlord-tenant disputes.",
   },
+
+  {
+  number: "07",
+  title: "Constitutional Law",
+  text: "Legal guidance and representation in constitutional matters, fundamental rights and constitutional petitions.",
+},
+{
+  number: "08",
+  title: "Civil Law",
+  text: "Legal assistance in civil disputes, claims, litigation and other civil court matters.",
+},
+{
+  number: "09",
+  title: "Family Law",
+  text: "Legal support for family disputes, matrimonial matters, child custody and related family court proceedings.",
+},
+{
+  number: "10",
+  title: "Land Revenue and Acquisition Laws",
+  text: "Legal assistance in land revenue matters, land records, property acquisition and related disputes.",
+},
 ];
 
 const judgments = [
@@ -364,9 +385,9 @@ export default function Home() {
         <div className="mx-auto grid max-w-7xl grid-cols-2 lg:grid-cols-4">
 
           {[
-            ["25+", "Years of Experience"],
+            ["30+", "Years of Experience"],
             ["2,000+", "Cases Handled"],
-            ["150+", "Reported Judgments"],
+            ["30+", "Reported Judgments"],
             ["15+", "Practice Areas"],
           ].map(([number, label]) => (
 
@@ -564,7 +585,7 @@ export default function Home() {
         {
           name: "Sheikh Muhammad Sulaman",
           role: "Advocate Supreme Court",
-          qualification: "LLB",
+          qualification: "LLB (Hons)",
           image: "/Sheikh%20Muhammad%20Sulaman.jpg",
           slug: "sheikh-muhammad-sulaman",
           expertise: [
@@ -572,12 +593,13 @@ export default function Home() {
             "Criminal Law",
             "Property Law",
             "Family Court Matters",
+            "Constitutional Law Revenue Laws"
           ],
         },
         {
           name: "Hifsa Sulaman Sheikh",
           role: "Advocate High Court",
-          qualification: "LLB\ MA IN IR",
+          qualification: "LLM International Law &Masters in International Relations",
           image: "/hifsa-sulaman-sheikh.jpg",
           slug: "hifsa-sulaman-sheikh",
           expertise: [
@@ -585,6 +607,7 @@ export default function Home() {
             "Civil Litigation",
             "Property Disputes",
             "Women & Children Rights",
+            "Criminal Law"
           ],
         },
          {
@@ -632,11 +655,11 @@ export default function Home() {
 
         {
           name: "Burooj Huma Hashmat",
-          role: "Advocate",
+          role: "Advocate High Court",
           qualification: "LLB",
           image: "/burooj-huma-hashmat.jpg",
           slug: "burooj-huma-hashmat",
-          expertise: ["Criminal Law"],
+          expertise: ["Civil Family law"],
         },
               
         {
@@ -647,6 +670,7 @@ export default function Home() {
           slug: "sehrish-javed",
           expertise: [
             "Criminal Law",
+            "Civil Family law"
           ],
         },
        
@@ -834,23 +858,23 @@ export default function Home() {
                   </p>
 
                   <a
-                    href="tel:+923215175624"
+                    href="tel:+923358022035"
                     className="mt-2 block text-lg text-[#14202b] hover:underline"
                   >
-                    0321-5175624
+                    0335-8022035
                   </a>
 
                   <div className="mt-4 flex flex-wrap gap-3">
 
                     <a
-                      href="tel:+923215175624"
+                      href="tel:+923358022035"
                       className="inline-flex items-center gap-2 bg-[#14202b] px-5 py-3 text-xs font-semibold uppercase tracking-wider text-white transition hover:bg-[#263746]"
                     >
                       📞 Call
                     </a>
 
                     <a
-                      href="https://wa.me/923215175624"
+                      href="https://wa.me/923358022035"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="inline-flex items-center gap-2 border border-[#14202b] px-5 py-3 text-xs font-semibold uppercase tracking-wider text-[#14202b] transition hover:bg-[#14202b] hover:text-white"
@@ -934,8 +958,9 @@ export default function Home() {
                     Rawalpindi, Pakistan
                   </p>
 
+
 <a
-  href="https://www.google.com/maps/place/Globe+Bridge+Travel+and+tours/@33.6274948,73.0699539,17z/"
+  href="https://www.google.com/maps/place/SULAMAN+LAW+ASSOCIATES/@33.5650708,72.9061646,12z/data=!4m12!1m2!2m1!1ssul,am+law+associate+rawalpindi!3m8!1s0x38df93eaaaaaaaab:0x8052a79a4c0419e4!8m2!3d33.565083!4d73.0169826!9m1!1b1!15sCh9zdWwsYW0gbGF3IGFzc29jaWF0ZSByYXdhbHBpbmRpkgEIbGF3X2Zpcm3gAQA!16s%2Fg%2F11fmpvk2c6"
   target="_blank"
   rel="noopener noreferrer"
   className="mt-4 inline-flex items-center gap-2 border border-[#14202b] px-5 py-3 text-xs font-semibold uppercase tracking-wider text-[#14202b] transition hover:bg-[#14202b] hover:text-white"
@@ -1112,10 +1137,10 @@ export default function Home() {
             <div className="mt-4 space-y-2">
 
               <a
-                href="tel:+923215175624"
+                href="tel:+923358022035"
                 className="block text-sm text-white/65 transition hover:text-[#c9a66b]"
               >
-                📞 0321-5175624
+                📞 0335-8022035
               </a>
 
               <a
@@ -1142,7 +1167,7 @@ export default function Home() {
             </a>
 
             <a
-              href="https://wa.me/923215175624"
+              href="https://wa.me/+923358022035"
               target="_blank"
               rel="noopener noreferrer"
               className="mt-5 inline-flex border border-[#c9a66b]/50 px-5 py-3 text-xs font-semibold uppercase tracking-wider text-[#c9a66b] transition hover:bg-[#c9a66b] hover:text-[#101a24]"
@@ -1163,7 +1188,7 @@ export default function Home() {
   <p>
     Website Designed &amp; Developed by{" "}
     <span className="font-semibold text-[#c9a66b]">
-      Engr. Fahad Naseer
+      Engr. Fahad Naseer & Engr.Saheefa Mehmood khawaja
     </span>
   </p>
 

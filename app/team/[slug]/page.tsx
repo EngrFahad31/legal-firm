@@ -1,4 +1,3 @@
-
 import Link from "next/link";
 
 const teamData: Record<
@@ -14,69 +13,78 @@ const teamData: Record<
   }
 > = {
   "sheikh-muhammad-sulaman": {
-    name: "Sheikh Muhammad Sulaman",
-    role: "Advocate",
-    bio: "Sheikh Muhammad Sulaman provides legal services in civil, criminal, property and family court matters.",
-    expertise: [
-      "Civil Law",
-      "Criminal Law",
-      "Property Law",
-      "Family Court Matters",
-    ],
-    education: "LLB",
-    achievements: ["Legal Practice and Client Representation"],
-    image: "/sheikh-muhammad-sulaman.jpeg",
-  },
+  name: "Sheikh Muhammad Sulaman",
+  role: "Advocate High Court",
+  bio: "Sheikh Muhammad Sulaman provides legal services in civil, criminal, property and family court matters.",
+  expertise: [
+    "Civil Law",
+    "Criminal Law",
+    "Property Law",
+    "Family Court Matters",
+    "Constitutional Law",
+    "Revenue Laws",
+  ],
+  education: "LLB (Hons)",
+  achievements: ["Legal Practice and Client Representation"],
+  image: "/Sheikh Muhammad Sulaman.jpg",
+},
 
   "hifsa-sulaman-sheikh": {
-    name: "Hifsa Sulaman Sheikh",
-    role: "Advocate High Court",
-    bio: "Hifsa Sulaman Sheikh provides legal representation and advisory services in her areas of practice.",
-    expertise: [
-      "Family & Matrimonial Law",
-      "Civil Litigation",
-      "Property Disputes",
-      "Women & Children Rights",
-      "International Law",
-    ],
-    education: "Please confirm qualification",
-    achievements: ["Advocate High Court", "Legal Representation and Advisory"],
-    image: "/hifsa-sulaman-sheikh.jpeg",
-  },
+  name: "Hifsa Sulaman Sheikh",
+  role: "Advocate High Court",
+  bio: "Hifsa Sulaman Sheikh provides legal representation and advisory services in her areas of practice.",
+  expertise: [
+    "Family & Matrimonial Law",
+    "Civil Litigation",
+    "Property Disputes",
+    "Women & Children Rights",
+    "International Law",
+    "Criminal Law",
+  ],
+  education: "LLM International Law, Masters in International Relations",
+  achievements: [
+    "Advocate High Court",
+    "Legal Representation and Advisory",
+  ],
+  image: "/hifsa-sulaman-sheikh.jpg",
+},
 
   "sehrish-javed": {
-    name: "Sehrish Javed",
-    role: "Advocate High Court",
-    bio: "Sehrish Javed provides legal representation in criminal law and other legal matters.",
-    expertise: [
-      "Family & Matrimonial Law",
-      "Civil Litigation",
-      "Property Disputes",
-      "Women & Children Rights",
-      "International Law",
-      "Criminal Law",
-    ],
-    education: "LLB",
-    achievements: [
-      "Advocate High Court",
-      "Legal Representation and Advisory",
-    ],
-    image: "/Sehrish Javed.jpeg",
-  },
+  name: "Sehrish Javed",
+  role: "Advocate High Court",
+  bio: "Sehrish Javed provides legal representation in criminal, civil and family law matters.",
+  expertise: [
+    "Criminal Law",
+    "Civil Law",
+    "Family Law",
+  ],
+  education: "LLB",
+  achievements: [
+    "Advocate High Court",
+    "Legal Representation and Advisory",
+  ],
+  image: "/sehrish-javed.jpg",
+},
 
   "burooj-huma-hashmat": {
-    name: "Burooj Huma Hashmat",
-    role: "Advocate High Court",
-    bio: "Burooj Huma Hashmat provides legal services with a focus on criminal law.",
-    expertise: ["Criminal Law"],
-    education: "LLB",
-    achievements: ["Advocate High Court", "Criminal Law Practice"],
-    image: "/Burooj Huma Hashmat.jpeg",
-  },
+  name: "Burooj Huma Hashmat",
+  role: "Advocate High Court",
+  bio: "Burooj Huma Hashmat provides legal representation in civil and family law matters.",
+  expertise: [
+    "Civil Law",
+    "Family Law",
+  ],
+  education: "LLB",
+  achievements: [
+    "Advocate High Court",
+    "Civil and Family Law Practice",
+  ],
+  image: "/burooj-huma-hashmat.jpg",
+},
 
   "sheikh-muhammad-waleed-sulaman": {
     name: "Sheikh Muhammad Waleed Sulaman",
-    role: "Advocate",
+    role: "Advocate High Court",
     bio: "Sheikh Muhammad Waleed Sulaman provides legal services in civil, criminal, property and taxation matters.",
     expertise: [
       "Civil Law",
@@ -86,7 +94,7 @@ const teamData: Record<
     ],
     education: "LLB",
     achievements: ["Legal Practice and Client Representation"],
-    image: "/Sheikh Muhammad Waleed Sulaman.jpeg",
+    image: "/sheikh-muhammad-waleed-sulaman.jpg",
   },
 
   "sheikh-muhammad-haseeb-sulaman": {
@@ -100,14 +108,17 @@ const teamData: Record<
       "Family Court Matters",
     ],
     education: "LLB",
-    achievements: ["Advocate High Court", "Legal Practice and Representation"],
-    image: "/Sheikh Muhammad Haseeb Sulaman.jpeg",
+    achievements: [
+      "Advocate High Court",
+      "Legal Practice and Representation",
+    ],
+    image: "/sheikh-muhammad-haseeb-sulaman.jpg",
   },
 
   "ali-artaza": {
-    name: "Ali Artaza",
-    role: "Advocate",
-    bio: "Ali Artaza focuses on taxation, corporate legal matters, intellectual property and dispute resolution.",
+    name: "Ali Irtiza",
+    role: "Taxation Expert",
+    bio: "Ali Irtiza focuses on taxation, corporate legal matters, intellectual property and dispute resolution.",
     expertise: [
       "Tax Filing & Audit",
       "Tax Litigation and Compliance",
@@ -117,12 +128,12 @@ const teamData: Record<
       "Intellectual Property Laws: Licensing and Litigation",
       "Arbitration and Mediation",
     ],
-    education: "Please confirm qualification",
+    education: "LLB",
     achievements: [
       "Tax and Corporate Legal Services",
       "Litigation and Dispute Resolution",
     ],
-   image: "/Ali%20Artaza.jpg",
+    image: "/Ali%20Artaza.jpg",
   },
 };
 
@@ -181,11 +192,11 @@ export default async function TeamMemberPage({
 
       <section className="mx-auto max-w-6xl px-5 pb-12 pt-10 sm:px-6 sm:pb-16 sm:pt-14 lg:pt-20">
         <div className="grid gap-10 lg:grid-cols-[0.85fr_1.15fr] lg:items-center">
-          <div className="overflow-hidden bg-[#f5f0e5]">
+          <div className="flex min-h-[430px] items-center justify-center overflow-hidden bg-[#f5f0e5] sm:min-h-[520px]">
             <img
               src={member.image}
               alt={member.name}
-              className="h-[430px] w-full object-contain sm:h-[520px]"
+              className="block h-auto max-h-[650px] w-full object-contain"
             />
           </div>
 

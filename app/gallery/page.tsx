@@ -45,8 +45,8 @@ const photos = [
   
   {
     src: "/gallery/legal-team.jpg",
-    title: "SLA Legal Team",
-    description: "A group photograph of the legal team and colleagues.",
+    title: "Visit to senate",
+    description: "A group photograph of the visit to senate.",
     category: "Team",
   },
   {
